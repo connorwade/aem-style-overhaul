@@ -3,27 +3,31 @@
 html,
 body {
     margin: 0;
-    font-size: var(--font-size);
-    font-family: var(--font-family);
-    line-height: var(--font-height);
-    color: var(--color-foreground);
-    background: var(--color-background);
+    font-size: theme(font.font-size);
+    font-family: theme(font.font-family);
+    line-height: theme(font.font-height);
+    color: theme(colors.foreground);
+    background: theme(colors.background);
 
     @media (prefers-color-scheme: dark) {
-        color: var(--color-foreground-dark);
-        background: var(--color-background-dark);
+        color: invert(theme(colors.foreground));
+        background: invert(theme(colors.background));
+        /* filter: invert(100%); */
     }
 }
 
 h1 {
-    color: var(--color-background);
+    @apply text-center font-extrabold;
+    /* @apply text-green-900; */
+
+    /* color: var(--color-background); */
 }
 
 a {
-    color: var(--color-link);
+    color: theme(colors.link);
 
     @media (prefers-color-scheme: dark) {
-        color: var(--color-link-dark);
+        color: invert(theme(colors.link));
     }
 }
 
