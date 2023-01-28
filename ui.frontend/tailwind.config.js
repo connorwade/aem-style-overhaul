@@ -1,3 +1,5 @@
+const plugin  = require('tailwindcss/plugin')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: [
@@ -17,12 +19,20 @@ module.exports = {
 			'link': '#2020E0',
 		},
 	},
-	plugins: [],
+	plugins: [
+		plugin(function({ addVariant }) {
+			addVariant('child', '& > *'),
+			addVariant('children', '& > *')
+			addVariant('allProgenity', '& *')
+		})
+	],
 	safelist: [
+		'bg-green-500',
 		'p-1',
-		'p-2',
-		'p-3',
-		'p-4',
-		'p-5'
+		'flex',
+		'justify-center',
+		'justify',
+		'justify-end',
+		
 	]
 };
