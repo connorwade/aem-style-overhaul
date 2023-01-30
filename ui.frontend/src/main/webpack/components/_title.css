@@ -1,3 +1,5 @@
-.cmp-title {}
+.cmp-title {
+    @apply bg-primary;
+}
 .cmp-title__text {}
 .cmp-title__link {}

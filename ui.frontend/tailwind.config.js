@@ -10,5 +10,8 @@ module.exports = {
 	],
 	theme: themes,
 	plugins: [],
-	safelist: safelists
+	safelist: safelists,
+	blocklist: [
+		'container'
+	]
 };

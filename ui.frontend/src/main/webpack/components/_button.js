@@ -1,6 +1,6 @@
 //Get button
 const button = document.querySelector('.button')
-const actualButton = document.querySelector('.cmp-button')
+const cmpButton = document.querySelector('.cmp-button')
 
 const tester = /^child:.*/
 
@@ -10,4 +10,6 @@ for(const c of button.classList) {
     }
 }
 
-actualButton.classList.add('font-bold')
+cmpButton.classList.add('bg-primary')
+cmpButton.classList.add('px-5')
+cmpButton.classList.add('py-3')
