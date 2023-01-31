@@ -2,10 +2,7 @@ const plugin  = require('tailwindcss/plugin');
 const {grid, flex, padding} = require('./src/main/tailwind/safelists/index.js');
 const themes = require('./src/main/tailwind/themes/index.js');
 
-const isAll = 
-    process.argv.indexOf('--tw-all') ? true : false
-
-let safelist = isAll ? [{
+let safelist = process.argv.indexOf('--tw-all') ? [{
     pattern: /./,
     variants: ['sm', 'md', 'lg']
 }] : [...padding, ...grid, ...flex]
