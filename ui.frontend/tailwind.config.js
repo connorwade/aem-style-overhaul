@@ -1,6 +1,14 @@
 const plugin  = require('tailwindcss/plugin');
-const safelists = require('./src/main/tailwind/safelists/index.js');
+const {grid, flex, padding} = require('./src/main/tailwind/safelists/index.js');
 const themes = require('./src/main/tailwind/themes/index.js');
+
+const isAll = 
+    process.argv.indexOf('--tw-all') ? true : false
+
+let safelist = isAll ? [{
+    pattern: /./,
+    variants: ['sm', 'md', 'lg']
+}] : [...padding, ...grid, ...flex]
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -10,7 +18,7 @@ module.exports = {
 	],
 	theme: themes,
 	plugins: [],
-	safelist: safelists,
+	safelist: safelist,
 	blocklist: [
 		'container'
 	]
